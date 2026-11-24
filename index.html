@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark">
 <title>Ringhey — Custom AI voice agents for your business</title>
-<meta name="description" content="Ringhey builds custom AI voice agents that answer calls and website visitors 24/7, with a white-label client portal for calls, transcripts and usage.">
+<meta name="description" content="Ringhey builds custom AI voice agents that answer calls and website visitors 24/7, with a client portal for calls, transcripts and usage.">
 <meta property="og:title" content="Ringhey — Custom AI voice agents">
 <meta property="og:description" content="AI voice agents that answer, book and qualify, 24/7. Built for your business, with your own client portal.">
 <meta property="og:image" content="og.png">
@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap">
-<link rel="stylesheet" href="styles.css?v=portal2">
+<link rel="stylesheet" href="styles.css?v=lightbox1">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -57,7 +57,7 @@
       <div class="hero-copy">
         <p class="eyebrow">AI voice agents · built for you</p>
         <h1 id="hero-title">Every call answered. Naturally.</h1>
-        <p class="lede">Ringhey builds custom AI voice agents that pick up your phone and talk to website visitors 24/7: they answer questions, book appointments and qualify leads in a natural voice. You get a branded portal to see every call.</p>
+        <p class="lede">Ringhey builds custom AI voice agents that pick up your phone and talk to website visitors 24/7: they answer questions, book appointments and qualify leads in a natural voice. You get a login to the Ringhey client portal to see every call.</p>
         <div class="hero-actions">
           <button type="button" class="btn btn-primary btn-lg" data-vapi-start>Talk to Ringhey</button>
           <a class="btn btn-ghost btn-lg" href="#contact">Book a call</a>
@@ -211,8 +211,8 @@
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Client portal</p>
-        <h2 id="portal-title">Your agent, fully transparent</h2>
-        <p>Every client gets a branded portal (for example <code>portal.ringhey.com</code>) to follow calls and usage in real time.</p>
+        <h2 id="portal-title">Your dashboard</h2>
+        <p>You get your own login to the Ringhey client portal at <code>portal.ringhey.com</code>. Review every call, recording and transcript, see usage and results.</p>
       </div>
       <ul class="portal-grid" role="list" style="list-style:none;padding:0;margin:0">
         <li class="portal-item">
@@ -232,8 +232,8 @@
         </li>
         <li class="portal-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7z"/></svg>
-          <h3>Your brand</h3>
-          <p>White-label: your logo, your colors, your domain.</p>
+          <h3>Your whole team</h3>
+          <p>Invite colleagues so they can review calls and usage too.</p>
         </li>
       </ul>
       <p class="portal-follow"><a href="/portal/">See the full portal tour →</a></p>
@@ -499,7 +499,7 @@
         </details>
         <details>
           <summary>What will I see in the client portal?</summary>
-          <p>A branded dashboard on your domain where you can review calls, recordings, transcripts, usage and analytics, plus optional results emails. <a href="/portal/">See the full portal tour</a>.</p>
+          <p>You get your own login to the Ringhey client portal at portal.ringhey.com. Review every call, recording and transcript, see usage and results, plus optional recap emails. <a href="/portal/">See the full portal tour</a>.</p>
         </details>
         <details>
           <summary>What about privacy?</summary>
@@ -617,6 +617,7 @@
   }
 </script>
 
-<script type="module" src="agent.js?v=portal2"></script>
+<script src="/lightbox.js?v=lightbox1" defer></script>
+<script type="module" src="agent.js?v=lightbox1"></script>
 </body>
 </html>

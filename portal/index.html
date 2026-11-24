@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark">
-<title>Your client portal — Ringhey</title>
-<meta name="description" content="What your clients see in the Ringhey client portal: calls, recordings, transcripts, analytics, results emails and a branded login on your own domain.">
-<meta property="og:title" content="Your client portal — Ringhey">
-<meta property="og:description" content="A branded portal where your clients review calls, transcripts and usage.">
+<title>Your dashboard — Ringhey</title>
+<meta name="description" content="Your login to the Ringhey client portal: review calls, recordings, transcripts, usage and results at portal.ringhey.com.">
+<meta property="og:title" content="Your dashboard — Ringhey">
+<meta property="og:description" content="Review every call, recording and transcript in the Ringhey client portal.">
 <meta property="og:image" content="/og.png">
 <meta property="og:type" content="website">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap">
-<link rel="stylesheet" href="/styles.css?v=portal2">
+<link rel="stylesheet" href="/styles.css?v=lightbox1">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -51,27 +51,27 @@
   <section class="page-hero" aria-labelledby="portal-hero-title">
     <div class="wrap">
       <p class="eyebrow">Client portal</p>
-      <h1 id="portal-hero-title">Your client portal</h1>
-      <p class="lede">Each client signs in on your domain — for example portal.yourbrand.com — with a one-time code. They can review calls, recordings, transcripts and usage, under your brand.</p>
+      <h1 id="portal-hero-title">Your dashboard</h1>
+      <p class="lede">You get your own login to the Ringhey client portal, at portal.ringhey.com. Review every call, recording and transcript, see usage and results.</p>
     </div>
   </section>
 
   <section class="section section-tight" aria-labelledby="extras-title">
     <div class="wrap">
       <div class="section-head">
-        <h2 id="extras-title">What your client gets</h2>
-        <p>The same branded space for every client, on your domain.</p>
+        <h2 id="extras-title">What you get</h2>
+        <p>Your login at portal.ringhey.com, with a one-time code sent to your email.</p>
       </div>
       <ul class="extras" role="list">
         <li class="portal-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7z"/></svg>
-          <h3>Your brand</h3>
-          <p>White-label login and dashboard: your logo, colours and a portal on your own domain.</p>
+          <h3>Everything in one place</h3>
+          <p>Calls, recordings, transcripts, usage and analytics in a single dashboard.</p>
         </li>
         <li class="portal-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg>
           <h3>One-time sign-in</h3>
-          <p>Clients get a code by email. There is no password to remember.</p>
+          <p>You get a code by email. There is no password to remember.</p>
         </li>
         <li class="portal-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5h16v11H4zM8 21h8M12 16v5"/></svg>
@@ -101,7 +101,7 @@
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">A look inside</p>
-        <h2 id="tour-title">What the client sees</h2>
+        <h2 id="tour-title">What you can see</h2>
         <p>Calls, transcripts and usage in one place, with 7, 14 or 30 day views.</p>
       </div>
       <p class="shot-note">Screenshots from our demo client.</p>
@@ -117,11 +117,13 @@
         </ul>
       </div>
       <figure class="browser-frame">
+        <button type="button" class="lightbox-trigger" data-full="/assets/portal/overview-1600.webp" aria-haspopup="dialog" aria-controls="lightbox" aria-label="View larger: Client portal overview showing calls and chats, a daily conversations chart, completed rate, after-hours conversations, average length, staff time, outcomes and a heatmap of when customers reach out">
         <div class="browser-chrome" aria-hidden="true"><span></span><span></span><span></span></div>
         <picture>
           <source type="image/webp" srcset="/assets/portal/overview-900.webp 900w, /assets/portal/overview-1600.webp 1600w" sizes="(min-width: 58rem) 54vw, 100vw">
           <img src="/assets/portal/overview-1600.webp" width="1600" height="865" alt="Client portal overview showing calls and chats, a daily conversations chart, completed rate, after-hours conversations, average length, staff time, outcomes and a heatmap of when customers reach out" loading="lazy" decoding="async">
         </picture>
+        </button>
       </figure>
     </article>
     <article class="tour-row">
@@ -135,11 +137,13 @@
         </ul>
       </div>
       <figure class="browser-frame">
+        <button type="button" class="lightbox-trigger" data-full="/assets/portal/conversations-1600.webp" aria-haspopup="dialog" aria-controls="lightbox" aria-label="View larger: Client portal conversations list with totals, search and filters, and columns for date, channel, duration, agent, from, to, direction and end reason">
         <div class="browser-chrome" aria-hidden="true"><span></span><span></span><span></span></div>
         <picture>
           <source type="image/webp" srcset="/assets/portal/conversations-900.webp 900w, /assets/portal/conversations-1600.webp 1600w" sizes="(min-width: 58rem) 54vw, 100vw">
           <img src="/assets/portal/conversations-1600.webp" width="1600" height="865" alt="Client portal conversations list with totals, search and filters, and columns for date, channel, duration, agent, from, to, direction and end reason" loading="lazy" decoding="async">
         </picture>
+        </button>
       </figure>
     </article>
     <article class="tour-row">
@@ -153,11 +157,13 @@
         </ul>
       </div>
       <figure class="browser-frame">
+        <button type="button" class="lightbox-trigger" data-full="/assets/portal/agents-1600.webp" aria-haspopup="dialog" aria-controls="lightbox" aria-label="View larger: Client portal agents page showing per-agent calls, completion rate, average duration, staff time, after-hours volume and charts">
         <div class="browser-chrome" aria-hidden="true"><span></span><span></span><span></span></div>
         <picture>
           <source type="image/webp" srcset="/assets/portal/agents-900.webp 900w, /assets/portal/agents-1600.webp 1600w" sizes="(min-width: 58rem) 54vw, 100vw">
           <img src="/assets/portal/agents-1600.webp" width="1600" height="865" alt="Client portal agents page showing per-agent calls, completion rate, average duration, staff time, after-hours volume and charts" loading="lazy" decoding="async">
         </picture>
+        </button>
       </figure>
     </article>
     <article class="tour-row">
@@ -171,11 +177,13 @@
         </ul>
       </div>
       <figure class="browser-frame">
+        <button type="button" class="lightbox-trigger" data-full="/assets/portal/analytics-1600.webp" aria-haspopup="dialog" aria-controls="lightbox" aria-label="View larger: Client portal analytics with channel filter, conversations by channel, sentiment, call volume, outcomes and peak times">
         <div class="browser-chrome" aria-hidden="true"><span></span><span></span><span></span></div>
         <picture>
           <source type="image/webp" srcset="/assets/portal/analytics-900.webp 900w, /assets/portal/analytics-1600.webp 1600w" sizes="(min-width: 58rem) 54vw, 100vw">
           <img src="/assets/portal/analytics-1600.webp" width="1600" height="865" alt="Client portal analytics with channel filter, conversations by channel, sentiment, call volume, outcomes and peak times" loading="lazy" decoding="async">
         </picture>
+        </button>
       </figure>
     </article>
     <article class="tour-row">
@@ -189,11 +197,13 @@
         </ul>
       </div>
       <figure class="browser-frame">
+        <button type="button" class="lightbox-trigger" data-full="/assets/portal/call-detail-1600.webp" aria-haspopup="dialog" aria-controls="lightbox" aria-label="View larger: Conversation detail with a recording player, searchable transcript, AI summary, knowledge-base actions, call analysis, response time and conversation flow">
         <div class="browser-chrome" aria-hidden="true"><span></span><span></span><span></span></div>
         <picture>
           <source type="image/webp" srcset="/assets/portal/call-detail-900.webp 900w, /assets/portal/call-detail-1600.webp 1600w" sizes="(min-width: 58rem) 54vw, 100vw">
           <img src="/assets/portal/call-detail-1600.webp" width="1600" height="898" alt="Conversation detail with a recording player, searchable transcript, AI summary, knowledge-base actions, call analysis, response time and conversation flow" loading="lazy" decoding="async">
         </picture>
+        </button>
       </figure>
     </article>
       </div>
@@ -372,7 +382,7 @@
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Contact</p>
-        <h2 id="portal-contact-title">Want to see this on your brand?</h2>
+        <h2 id="portal-contact-title">Want to take a look?</h2>
         <p>Book a 20-minute intro call and we can walk through the portal with your use case.</p>
       </div>
       <div class="contact-panel">
@@ -465,6 +475,7 @@
     }
   });
 </script>
-<script type="module" src="/agent.js?v=portal2"></script>
+<script src="/lightbox.js?v=lightbox1" defer></script>
+<script type="module" src="/agent.js?v=lightbox1"></script>
 </body>
 </html>
