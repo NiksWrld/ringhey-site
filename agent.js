@@ -1,6 +1,6 @@
 import Vapi from "https://esm.sh/@vapi-ai/web@2";
 
-const PUBLIC_KEY = "e1b402e2-b8f5-46fc-be4c-de9bc184dfaa";
+const PUBLIC_KEY = "6bbbc9f8-d710-4247-8627-48afd75a7976";
 
 const AGENTS = {
   ringhey: {
