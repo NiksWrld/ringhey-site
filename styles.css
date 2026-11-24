@@ -925,8 +925,16 @@ body { padding-block-end: 6rem; }
   padding-block: 0.9rem 0.4rem;
   align-items: stretch;
 }
-@media (min-width: 48rem) {
-  .pricing { grid-template-columns: repeat(3, 1fr); }
+@media (min-width: 40rem) {
+  .pricing { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 70rem) {
+  .pricing { grid-template-columns: repeat(4, 1fr); gap: 0.9rem; }
+  .price { padding: 1.15rem 1.05rem; }
+  .price .amount { font-size: clamp(1.55rem, 1.8vw, 2.05rem); }
+  .price-list { font-size: 0.9rem; }
+  .price.featured { transform: translateY(-6px); padding-block-start: 1.55rem; }
+  .price.featured:hover { transform: translateY(-10px); }
 }
 .price {
   display: flex;
@@ -1443,6 +1451,17 @@ body { padding-block-end: 6rem; }
   color: var(--accent);
   font-size: 1.15rem;
   font-weight: 650;
+}
+.price .price-guarantee {
+  margin: 0.85rem 0 0;
+  padding: 0.55rem 0.7rem;
+  border-radius: var(--radius-sm);
+  background: var(--accent-soft);
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--line));
+  color: var(--fg);
+  font-size: 0.8rem;
+  font-weight: 650;
+  line-height: 1.4;
 }
 
 
