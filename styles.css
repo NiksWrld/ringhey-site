@@ -917,7 +917,9 @@ body { padding-block-end: 6rem; }
 /* Pricing */
 .pricing {
   display: grid;
-  gap: 1rem;
+  gap: 1.15rem;
+  padding-block: 0.9rem 0.4rem;
+  align-items: stretch;
 }
 @media (min-width: 48rem) {
   .pricing { grid-template-columns: repeat(3, 1fr); }
@@ -926,12 +928,24 @@ body { padding-block-end: 6rem; }
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
+  position: relative;
+  border: 1.5px solid color-mix(in srgb, var(--accent) 55%, var(--line));
+  transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+  z-index: 0;
+}
+.price:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 16px 40px rgba(43, 224, 185, 0.2), 0 0 0 1px color-mix(in srgb, var(--accent) 45%, transparent);
+  z-index: 1;
 }
 .price .amount {
-  font-size: clamp(1.6rem, 3vw, 2rem);
-  font-weight: 650;
-  letter-spacing: -0.03em;
-  margin: 0.35rem 0 0.15rem;
+  font-size: clamp(2rem, 3.6vw, 2.6rem);
+  font-weight: 750;
+  letter-spacing: -0.04em;
+  margin: 0.45rem 0 0.1rem;
+  color: var(--accent);
+  line-height: 1.05;
 }
 .price .amount span {
   font-size: 0.95rem;
@@ -940,8 +954,23 @@ body { padding-block-end: 6rem; }
   letter-spacing: 0;
 }
 .price.featured {
-  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 20%, transparent), var(--shadow);
+  border: 2px solid var(--accent);
+  background: color-mix(in srgb, var(--accent-soft) 40%, var(--bg-elev));
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--accent) 35%, transparent),
+    0 18px 50px rgba(43, 224, 185, 0.22),
+    0 0 48px rgba(43, 224, 185, 0.14);
+  transform: translateY(-8px);
+  z-index: 1;
+  padding-block-start: 1.7rem;
+}
+.price.featured:hover {
+  transform: translateY(-12px);
+  border-color: #33F5C8;
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--accent) 55%, transparent),
+    0 22px 56px rgba(43, 224, 185, 0.3),
+    0 0 56px rgba(43, 224, 185, 0.2);
 }
 .price-foot {
   margin-block-start: 1.5rem;
@@ -1079,6 +1108,13 @@ body { padding-block-end: 6rem; }
     animation: none !important;
   }
   .viz-bars span { transform: scaleY(0.35); }
+  .price,
+  .price:hover,
+  .price.featured,
+  .price.featured:hover {
+    transition: none;
+    transform: none;
+  }
 }
 
 @media (forced-colors: active) {
@@ -1276,21 +1312,49 @@ body { padding-block-end: 6rem; }
 }
 
 /* Pricing tiers */
-.price-kicker {
+.price .price-kicker {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
   margin: 0;
-  font-size: 0.8rem;
-  font-weight: 650;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.28rem 0.8rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-fg);
+  font-size: 0.72rem;
+  font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--accent);
+  white-space: nowrap;
+  line-height: 1.2;
+  box-shadow: 0 6px 18px rgba(43, 224, 185, 0.28);
 }
 .price-list {
   margin: 0.85rem 0 0;
-  padding-inline-start: 1.1rem;
+  padding: 0;
+  list-style: none;
   color: var(--muted);
   font-size: 0.95rem;
 }
-.price-list li + li { margin-block-start: 0.28rem; }
+.price-list li {
+  position: relative;
+  padding-inline-start: 1.55rem;
+}
+.price-list li + li { margin-block-start: 0.42rem; }
+.price-list li::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-start: 0.22em;
+  inline-size: 1rem;
+  block-size: 1rem;
+  background-color: var(--accent);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 8.5l3.2 3.2L13 4.5'/%3E%3C/svg%3E") center / contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 8.5l3.2 3.2L13 4.5'/%3E%3C/svg%3E") center / contain no-repeat;
+}
 .price-actions {
   display: flex;
   flex-wrap: wrap;
@@ -1298,14 +1362,41 @@ body { padding-block-end: 6rem; }
   margin-block-start: auto;
   padding-block-start: 1.2rem;
 }
-.price-note,
-.price-offer {
-  margin: 1rem 0 0;
+.price-actions .btn { inline-size: 100%; }
+.price-actions .btn-ghost {
+  border-color: color-mix(in srgb, var(--accent) 70%, var(--line-strong));
+  color: var(--accent);
+}
+.price-actions .btn-ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent-fg);
+  background: var(--accent);
+}
+.price-note {
+  margin: 1.15rem 0 0;
   color: var(--muted);
   font-size: 0.92rem;
   max-inline-size: 44rem;
 }
-.price-offer { color: var(--faint); }
+.price-offer {
+  display: block;
+  margin: 1rem 0 0;
+  padding: 0.7rem 1.05rem;
+  max-inline-size: 44rem;
+  border-radius: var(--radius-sm);
+  background: var(--accent-soft);
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--line));
+  color: var(--fg);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+.price-offer a {
+  color: var(--accent);
+  font-weight: 650;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.price-offer a:hover { text-decoration: underline; }
 .paid-thanks {
   background: var(--accent-soft);
   border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--line));
@@ -1343,11 +1434,11 @@ body { padding-block-end: 6rem; }
 .integ-item.wide .integ-badge { margin-block-start: 0; margin-inline-start: auto; }
 .integ-chip { justify-content: center; }
 .price .amount + .amount { margin-block-start: 0; }
-.price-monthly {
-  margin: 0 0 0.35rem;
-  color: var(--muted);
-  font-size: 1.05rem;
-  font-weight: 600;
+.price .price-monthly {
+  margin: 0.15rem 0 0.35rem;
+  color: var(--accent);
+  font-size: 1.15rem;
+  font-weight: 650;
 }
 
 
