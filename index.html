@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=hero1">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -48,6 +48,10 @@
 
 <main id="main">
   <section class="hero" id="top" aria-labelledby="hero-title">
+    <picture class="hero-visual">
+      <source type="image/webp" srcset="assets/hero-agent-1024.webp 1024w, assets/hero-agent-1536.webp 1536w" sizes="(min-width: 58rem) 62vw, 100vw">
+      <img src="assets/hero-agent.jpg" width="1536" height="1024" alt="Ringhey voice agent wearing a headset with the Ringhey logo, surrounded by teal sound waves" fetchpriority="high" decoding="async">
+    </picture>
     <div class="wrap">
       <div class="hero-copy">
         <p class="eyebrow">AI voice agents · built for you</p>
