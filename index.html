@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap">
-<link rel="stylesheet" href="styles.css?v=solov1">
+<link rel="stylesheet" href="styles.css?v=demotabs1">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -145,15 +145,24 @@
       <div class="section-head">
         <p class="eyebrow">Live demo</p>
         <h2 id="demo-title">Talk to our voice agent</h2>
-        <p>This is Ringhey’s own customer-service agent. Ask about our packages, the client portal, how a voice agent works, or whether this would fit your business. Allow microphone access when asked.</p>
+        <p>Try a live voice agent. The Ringhey tab is our own customer-service agent — ask about packages, the client portal, or whether this would fit your business. Hair salon and Electrician are German demos of ready-made templates, the kind we use on the Solo plan. Allow microphone access when asked.</p>
       </div>
 
-      <div class="call-widget" id="call-widget" data-state="idle">
+      <div class="demo-tabs-wrap">
+        <div class="demo-tabs" id="demo-tabs" role="tablist" aria-label="Demo agents">
+          <button type="button" class="demo-tab" role="tab" id="tab-agent-ringhey" data-agent="ringhey" aria-selected="true" aria-controls="call-widget" tabindex="0">Ringhey</button>
+          <button type="button" class="demo-tab" role="tab" id="tab-agent-salon" data-agent="salon" aria-selected="false" aria-controls="call-widget" tabindex="-1">Hair salon</button>
+          <button type="button" class="demo-tab" role="tab" id="tab-agent-electrician" data-agent="electrician" aria-selected="false" aria-controls="call-widget" tabindex="-1">Electrician</button>
+        </div>
+      </div>
+
+      <div class="call-widget" id="call-widget" data-state="idle" role="tabpanel" aria-labelledby="tab-agent-ringhey">
         <div class="agent-card">
           <div class="agent-avatar" aria-hidden="true">
             <span class="avatar-glow"></span>
             <span class="avatar-ring"></span>
             <img src="favicon-180.png" alt="" width="88" height="88">
+            <span class="avatar-initial" hidden aria-hidden="true"></span>
           </div>
           <div class="agent-meta">
             <div class="agent-title-row">
@@ -564,6 +573,7 @@
     <span class="agent-avatar fab-avatar" aria-hidden="true">
       <span class="avatar-ring"></span>
       <img src="favicon-180.png" alt="" width="36" height="36">
+      <span class="avatar-initial" hidden aria-hidden="true"></span>
     </span>
     <span class="talk-fab-label">Talk to agent</span>
   </button>
@@ -574,6 +584,7 @@
         <span class="avatar-glow"></span>
         <span class="avatar-ring"></span>
         <img src="favicon-180.png" alt="" width="52" height="52">
+        <span class="avatar-initial" hidden aria-hidden="true"></span>
       </span>
       <span class="dock-meta">
         <span class="agent-name">Ringhey Agent</span>
@@ -643,7 +654,7 @@
   }
 </script>
 
-<script src="/lightbox.js?v=vwblur1" defer></script>
-<script type="module" src="agent.js?v=vwblur1"></script>
+<script src="/lightbox.js?v=demotabs1" defer></script>
+<script type="module" src="agent.js?v=demotabs1"></script>
 </body>
 </html>
