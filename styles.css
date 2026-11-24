@@ -382,7 +382,11 @@ a.header-cta { display: none; }
   display: grid;
   gap: 1rem;
   grid-template-columns: 1fr;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
+.step code { white-space: nowrap; }
 @media (min-width: 48rem) {
   .steps { grid-template-columns: repeat(3, 1fr); }
 }
@@ -1580,4 +1584,100 @@ html.lightbox-open body {
 
 @media (prefers-reduced-motion: reduce) {
   .lightbox-backdrop { backdrop-filter: none; }
+}
+
+
+/* Partner program */
+.hero-actions { margin: 1.4rem 0 0; }
+.earn-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 48rem) {
+  .earn-grid { grid-template-columns: 1fr 1fr; }
+}
+.earn-card h3 { margin-block-end: 0.6rem; }
+.earn-card p + p { margin-block-start: 0.7rem; }
+.earn-card strong { color: var(--fg); font-weight: 650; }
+.share-line {
+  margin-block-start: 0.85rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: var(--radius-sm);
+  background: var(--accent-soft);
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--line));
+  color: var(--fg);
+}
+.share-line q {
+  color: var(--accent);
+  font-weight: 650;
+  quotes: '"' '"';
+}
+.muted-note {
+  color: var(--faint);
+  font-size: 0.9rem;
+}
+.partner-form {
+  display: grid;
+  gap: 0.35rem;
+  max-inline-size: 36rem;
+  margin-block-start: 0.5rem;
+}
+.partner-form label {
+  margin-block-start: 0.7rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.partner-form .optional {
+  font-weight: 500;
+  color: var(--faint);
+}
+.partner-form input[type="text"],
+.partner-form input[type="email"],
+.partner-form textarea {
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line-strong);
+  background: var(--bg-elev);
+  color: var(--fg);
+  caret-color: var(--accent);
+}
+.partner-form input:focus-visible,
+.partner-form textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-color: var(--accent);
+}
+.partner-form textarea { min-block-size: 8rem; resize: vertical; }
+.partner-form .form-actions { margin-block-start: 1.1rem; }
+.partner-form .hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.partner-teaser {
+  margin: 1.25rem 0 0;
+  padding: 0.9rem 1.1rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-elev);
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--line));
+  color: var(--fg);
+  font-size: 0.95rem;
+  max-inline-size: 44rem;
+}
+.partner-teaser p { margin: 0; }
+.partner-teaser p + p { margin-block-start: 0.35rem; color: var(--muted); }
+.partner-teaser a {
+  color: var(--accent);
+  font-weight: 650;
+  text-decoration: none;
+}
+.partner-teaser a:hover { text-decoration: underline; }
+code {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.92em;
+  color: var(--accent);
 }
