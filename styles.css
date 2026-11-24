@@ -781,7 +781,7 @@ a.header-cta { display: none; }
   color: var(--faint);
 }
 
-/* Floating dock / Talk to us */
+/* Floating dock / Talk to agent */
 .call-dock {
   position: fixed;
   inset-block-end: calc(1.15rem + env(safe-area-inset-bottom, 0px));
