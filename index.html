@@ -51,7 +51,7 @@
         <h1 id="hero-title">Every call answered. Naturally.</h1>
         <p class="lede">Ringhey builds custom AI voice agents that pick up your phone and talk to website visitors 24/7: they answer questions, book appointments and qualify leads in a natural voice. You get a branded portal to see every call.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary btn-lg" href="#demo">Listen to the demo</a>
+          <button type="button" class="btn btn-primary btn-lg" data-vapi-start>Talk to Ringhey</button>
           <a class="btn btn-ghost btn-lg" href="#contact">Book a call</a>
         </div>
         <ul class="hero-meta">
@@ -136,30 +136,36 @@
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Live demo</p>
-        <h2 id="demo-title">Talk to Carl</h2>
-        <p>Carl is a voice agent pilot we built for volunteer travel. Press start, allow your microphone and ask anything.</p>
+        <h2 id="demo-title">Talk to our voice agent</h2>
+        <p>This is Ringhey’s own customer-service agent. Ask about our packages, the client portal, how a voice agent works, or whether this would fit your business. Allow microphone access when asked.</p>
       </div>
-      <div class="showcase">
-        <article class="case" aria-labelledby="case-title">
-          <span class="badge">Showcase · Demo / pilot</span>
-          <h3 id="case-title">Carl for Volunteer World</h3>
-          <p>A voice assistant demo for <a href="https://www.volunteerworld.com" rel="noopener">volunteerworld.com</a>. Carl answers questions about volunteer programs in Thailand and the volunteer FAQ: locations, costs, what's included, how applications and payments work.</p>
-          <ul style="color:var(--muted);padding-inline-start:1.1rem;margin:1rem 0 0">
-            <li>Answers from a curated knowledge base</li>
-            <li>Natural ElevenLabs voice on Vapi</li>
-            <li>Runs in the browser; phone line possible</li>
-          </ul>
-          <p class="note">Independent demo built by Ringhey to show what's possible. Volunteer World is not presented as a Ringhey client.</p>
-          <div class="case-actions">
-            <a class="btn btn-primary" href="https://nikswrld.github.io/carla-test/" target="_blank" rel="noopener">Open demo in new tab</a>
-            <a class="btn btn-ghost" href="#contact">Get one for your business</a>
-          </div>
-        </article>
-        <div class="demo-frame">
-          <div class="demo-chrome" aria-hidden="true"><i></i><i></i><i></i><span>nikswrld.github.io/carla-test</span></div>
-          <iframe src="https://nikswrld.github.io/carla-test/" title="Carl voice agent live demo" allow="microphone; autoplay" loading="lazy"></iframe>
+
+      <div class="call-widget" id="call-widget">
+        <div class="call-controls">
+          <button type="button" class="btn btn-primary" data-vapi-start id="call-start">Talk to our voice agent</button>
+          <button type="button" class="btn btn-ghost" id="call-mute" disabled aria-pressed="false">Mute</button>
+          <button type="button" class="btn btn-end" id="call-end" disabled>End call</button>
         </div>
+        <p class="call-status" id="call-status" role="status" aria-live="polite">Ready when you are — we’ll ask for microphone access.</p>
+        <div class="transcript" id="call-log" role="log" aria-live="polite" aria-relevant="additions" aria-label="Live transcript"></div>
+        <p class="call-note">Demo · English · conversations may be recorded for quality testing.</p>
       </div>
+
+      <article class="case case-follow" aria-labelledby="case-title">
+        <span class="badge">Showcase · Demo / pilot</span>
+        <h3 id="case-title">Carl for Volunteer World</h3>
+        <p>A separate voice-assistant pilot for <a href="https://www.volunteerworld.com" rel="noopener">volunteerworld.com</a>. Carl answers questions about volunteer programs in Thailand and the volunteer FAQ: locations, costs, what’s included, and how applications and payments work.</p>
+        <ul class="case-list">
+          <li>Answers from a curated knowledge base</li>
+          <li>Natural ElevenLabs voice on Vapi</li>
+          <li>Works in the browser; a phone line is also possible</li>
+        </ul>
+        <p class="note">Independent demo built by Ringhey to show what’s possible. Volunteer World is not presented as a Ringhey client.</p>
+        <div class="case-actions">
+          <a class="btn btn-ghost" href="https://nikswrld.github.io/carla-test/" target="_blank" rel="noopener">Try the Carl demo</a>
+          <a class="btn btn-ghost" href="#contact">Get one for your business</a>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -281,6 +287,12 @@
   </section>
 </main>
 
+
+<button type="button" class="talk-fab" data-vapi-start id="talk-fab" aria-controls="call-widget">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3a3.5 3.5 0 0 0-3.5 3.5v5a3.5 3.5 0 1 0 7 0v-5A3.5 3.5 0 0 0 12 3z"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4"/></svg>
+  <span class="talk-fab-label">Talk to us</span>
+</button>
+
 <footer class="site-footer">
   <div class="wrap footer-inner">
     <span>© 2026 Ringhey</span>
@@ -311,5 +323,7 @@
     }
   });
 </script>
+
+<script type="module" src="agent.js"></script>
 </body>
 </html>
