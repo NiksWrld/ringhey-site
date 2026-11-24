@@ -143,13 +143,43 @@
         <p>This is Ringhey’s own customer-service agent. Ask about our packages, the client portal, how a voice agent works, or whether this would fit your business. Allow microphone access when asked.</p>
       </div>
 
-      <div class="call-widget" id="call-widget">
-        <div class="call-controls">
-          <button type="button" class="btn btn-primary" data-vapi-start id="call-start">Talk to our voice agent</button>
-          <button type="button" class="btn btn-ghost" id="call-mute" disabled aria-pressed="false">Mute</button>
-          <button type="button" class="btn btn-end" id="call-end" disabled>End call</button>
+      <div class="call-widget" id="call-widget" data-state="idle">
+        <div class="agent-card">
+          <div class="agent-avatar" aria-hidden="true">
+            <span class="avatar-glow"></span>
+            <span class="avatar-ring"></span>
+            <img src="favicon-180.png" alt="" width="88" height="88">
+          </div>
+          <div class="agent-meta">
+            <div class="agent-title-row">
+              <h3 class="agent-name">Ringhey Agent</h3>
+              <span class="status-chip" id="call-status" data-state="idle" role="status" aria-live="polite">Ready</span>
+            </div>
+            <p class="agent-label">AI voice agent</p>
+            <div class="viz-bars" id="viz-bars" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
         </div>
-        <p class="call-status" id="call-status" role="status" aria-live="polite">Ready when you are — we’ll ask for microphone access.</p>
+
+        <p class="call-hint" id="call-hint">Ask about pricing, the portal, or how a voice agent would work for you. We’ll request microphone access when you start.</p>
+
+        <div class="call-controls">
+          <button type="button" class="btn btn-primary" data-vapi-start id="call-start">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3a3.5 3.5 0 0 0-3.5 3.5v5a3.5 3.5 0 1 0 7 0v-5A3.5 3.5 0 0 0 12 3z"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4"/></svg>
+            Start call
+          </button>
+          <button type="button" class="btn btn-ghost" data-vapi-mute disabled aria-pressed="false">
+            <svg class="icon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3a3.5 3.5 0 0 0-3.5 3.5v5a3.5 3.5 0 1 0 7 0v-5A3.5 3.5 0 0 0 12 3z"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4"/></svg>
+            <svg class="icon-mic-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 3l18 18"/><path d="M9 9v2.5A3 3 0 0 0 14.8 14M15 10.2V7.5A3 3 0 0 0 9.7 5.2"/><path d="M6 11a6 6 0 0 0 8.2 5.6M18 13.5A6 6 0 0 0 12 5M12 17v4"/></svg>
+            <span data-mute-label>Mute</span>
+          </button>
+          <button type="button" class="btn btn-end" data-vapi-end disabled>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 15.5c4.5-3 11.5-3 16 0"/><path d="M7 18l-2.2-3.8L8.5 13M17 18l2.2-3.8L15.5 13"/></svg>
+            End call
+          </button>
+        </div>
+
         <div class="transcript" id="call-log" role="log" aria-live="polite" aria-relevant="additions" aria-label="Live transcript"></div>
         <p class="call-note">Demo · English · conversations may be recorded for quality testing.</p>
       </div>
@@ -291,10 +321,42 @@
 </main>
 
 
-<button type="button" class="talk-fab" data-vapi-start id="talk-fab" aria-controls="call-widget">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3a3.5 3.5 0 0 0-3.5 3.5v5a3.5 3.5 0 1 0 7 0v-5A3.5 3.5 0 0 0 12 3z"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4"/></svg>
-  <span class="talk-fab-label">Talk to us</span>
-</button>
+<div class="call-dock" id="call-dock" data-state="idle">
+  <button type="button" class="talk-fab" data-vapi-start id="talk-fab" aria-controls="call-widget">
+    <span class="agent-avatar fab-avatar" aria-hidden="true">
+      <span class="avatar-ring"></span>
+      <img src="favicon-180.png" alt="" width="36" height="36">
+    </span>
+    <span class="talk-fab-label">Talk to us</span>
+  </button>
+
+  <div class="dock-panel" id="dock-panel">
+    <button type="button" class="dock-open" id="dock-open" aria-label="Show the full call transcript">
+      <span class="agent-avatar" aria-hidden="true">
+        <span class="avatar-glow"></span>
+        <span class="avatar-ring"></span>
+        <img src="favicon-180.png" alt="" width="52" height="52">
+      </span>
+      <span class="dock-meta">
+        <span class="agent-name">Ringhey Agent</span>
+        <span class="agent-label">AI voice agent</span>
+        <span class="status-chip dock-chip" data-state="idle">Ready</span>
+      </span>
+      <span class="viz-bars dock-bars" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+      </span>
+    </button>
+    <div class="dock-actions">
+      <button type="button" class="btn btn-ghost btn-icon" data-vapi-mute disabled aria-pressed="false" aria-label="Mute">
+        <svg class="icon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3a3.5 3.5 0 0 0-3.5 3.5v5a3.5 3.5 0 1 0 7 0v-5A3.5 3.5 0 0 0 12 3z"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4"/></svg>
+        <svg class="icon-mic-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 3l18 18"/><path d="M9 9v2.5A3 3 0 0 0 14.8 14M15 10.2V7.5A3 3 0 0 0 9.7 5.2"/><path d="M6 11a6 6 0 0 0 8.2 5.6M18 13.5A6 6 0 0 0 12 5M12 17v4"/></svg>
+      </button>
+      <button type="button" class="btn btn-end btn-icon" data-vapi-end disabled aria-label="End call">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 15.5c4.5-4 11.5-3 16 0"/><path d="M7 18l-2.2-3.8L8.5 13M17 18l2.2-3.8L15.5 13"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
 
 <footer class="site-footer">
   <div class="wrap footer-inner">
