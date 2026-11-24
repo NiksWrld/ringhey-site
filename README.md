@@ -12,5 +12,10 @@ Client portal later at `portal.ringhey.com` (CNAME per VoiceAIPortal instruction
 
 ## Placeholders to replace
 - hello@ringhey.com (mailto)
-- https://calendly.com/ringhey/intro
+- https://calendly.com/ringhey
 - impressum.html, datenschutz.html
+
+## Brand assets
+- `assets/ringhey-logo-original.png` — unmodified source logo from Jan
+- `assets/ringhey-logo.png` / `.webp` / `@2x.png` — transparent wordmark for the site
+- Favicons are cropped from the speech-bubble icon (`favicon-32.png`, `favicon-180.png`, `favicon-512.png`, `apple-touch-icon.png`)

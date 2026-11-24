@@ -5,15 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark">
 <title>Page not found — Ringhey</title>
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="favicon-512.png" type="image/png" sizes="512x512">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header class="site-header">
   <div class="header-inner">
-    <a class="logo" href="index.html">
-      <svg viewBox="0 0 28 28" fill="none" aria-hidden="true"><circle cx="14" cy="14" r="12" stroke="currentColor" stroke-width="1.6"/><circle cx="14" cy="14" r="7.2" stroke="currentColor" stroke-width="1.6"/><circle cx="14" cy="14" r="2.4" fill="currentColor"/></svg>
-      Ringhey
+    <a class="logo" href="index.html" aria-label="Ringhey home">
+      <picture>
+        <source type="image/webp" srcset="assets/ringhey-logo.webp">
+        <img src="assets/ringhey-logo.png" srcset="assets/ringhey-logo.png 1x, assets/ringhey-logo@2x.png 2x" alt="Ringhey" width="150" height="40">
+      </picture>
     </a>
   </div>
 </header>
